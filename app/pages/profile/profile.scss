@@ -74,14 +74,14 @@
     right: 15px;
     z-index: 4;
     margin-top: -25px;
-    background-color: #78BB5C;
-    color:white;
+    background-color: $status_green;
+    color:$status_white;
     font-size: 27px;
     text-align: center;
   }
   .profile-card-btn-arrow:active{
-    background-color: white;
-    color:#78BB5C;
+    background-color: $status_white;
+    color:$status_green;
   }
   .profile-card-btn-arrow div:first-child{
     margin-bottom: -27px;
@@ -100,7 +100,7 @@
     width:40%;
     margin-top: 3px;
     font-size: 25px;
-    color:#78BB5C;
+    color:$status_green;
   }
   
   .item{

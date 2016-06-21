@@ -41,8 +41,8 @@
     text-align: center;
   }
   .btn-remove-reward:active{
-    background-color: white;
-    color:#F45D40;
+    background-color: $status_white;
+    color:$status_red;
   }
 
   .white {

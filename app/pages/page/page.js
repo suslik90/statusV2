@@ -31,7 +31,8 @@ export class PagePage {
             //var width = Number(Math.round(100 / this.items.length));
             if (delta >= 0) {
                 this.maxScroll = delta;
-                this.progressWidth = (this.maxScroll / (this.rewards.length * 200)) * 100;
+                this.progressWidth = (this.maxScroll / (this.rewards.length * 150)) * 100;
+                //this.progressWidth = 100/this.rewards.length;
             }
 
         });
@@ -49,10 +50,6 @@ export class PagePage {
         this.mySlideOptions = {
             initialSlide: 1
         };
-
-        for (let i = 1; i < 31; i++) {
-            this.items.push({id: i, title: 'Item ' + i});
-        }
 
         this.loadingPage();
 
@@ -87,10 +84,6 @@ export class PagePage {
         span.className = options.className;
         span.textContent = options.percent + '%';
 
-        //if (typeof(G_vmlCanvasManager) !== 'undefined') {
-        //    G_vmlCanvasManager.initElement(canvas);
-        //}
-
         var ctx = canvas.getContext('2d');
         canvas.width = canvas.height = options.size;
 
@@ -100,10 +93,11 @@ export class PagePage {
         ctx.translate(options.size / 2, options.size / 2); // change center
         ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
 
-        //imd = ctx.getImageData(0, 0, 240, 240);
+        var img = ctx.getImageData(0, 0, 240, 240);
+        ctx.putImageData(img, 0,0);
         var radius = (options.size - options.lineWidth) / 2;
         this.drawCircle(ctx, radius, '#38475C', options.lineWidth, 100 / 100);
-        this.drawCircle(ctx, radius, '#70C84E', options.lineWidth, options.percent / 100);
+        this.drawCircle(ctx, radius, '#50DA17', options.lineWidth, options.percent / 100);
     }
 
     drawCircle(ctx, radius, color, lineWidth, percent) {
@@ -201,33 +195,6 @@ export class PagePage {
                 category: {text: 'Защита Iphone', color: 'white'},
                 color_line: 'blue',
                 time_to_end: '00:10:01'
-            },
-            {
-                id: 7,
-                name: "Мода мода мода",
-                using: false,
-                img: "img/nike.jpg",
-                category: {text: 'Кроссовки Nike', color: 'white'},
-                color_line: 'indigo',
-                time_to_end: '12:00:00'
-            },
-            {
-                id: 8,
-                name: "О здоровье",
-                using: false,
-                img: "img/milk.jpeg",
-                category: {text: 'Молоко из под ...', color: 'white'},
-                color_line: 'darkorange',
-                time_to_end: '2:05:45'
-            },
-            {
-                id: 9,
-                name: "Для девайса",
-                using: false,
-                img: "img/case.png",
-                category: {text: 'Защита Iphone', color: 'white'},
-                color_line: 'blue',
-                time_to_end: '00:10:01'
             }
         ];
 
@@ -251,6 +218,13 @@ export class PagePage {
                 time_to_end: '00:10:01'
             }
         ];
+
+        this.slideBoxes = [
+            {class:'profile',type:0,page:this.profileRewards},
+            {class:'rewards-line',type:1, page:this.rewards},
+            {class:'my-rewards',type:2, page:this.rewardsFavorites},
+        ];
+        console.log(this.slideBoxes);
     }
 
 
