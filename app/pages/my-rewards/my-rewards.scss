@@ -1,0 +1,55 @@
+.my-rewards {
+  .card.rewards:first-child{
+    margin-top: 11px;
+  }
+  .stars-rating {
+    width: 35%;
+    height: 30px;
+    font-size: 13px;
+    position: absolute;
+    z-index: 3;
+    text-align: right;
+    padding-top: 6px;
+    padding-right: 7px;
+    color: $status_white;
+    right: 12px;
+    background-color: rgba(0,0,0,0.3);
+  }
+  .progress-percent {
+    width: 90%;
+    height: 24px;
+    background: transparent;
+    margin-top: -34px;
+    z-index: 2;
+    color: $status_white;
+    position: absolute;
+    margin-left: 17px;
+    font-size: 24px;
+    text-align: left;
+  }
+  .btn-remove-reward{
+    width:40px;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    z-index: 4;
+    margin-top: -20px;
+    background-color: $status_red;
+    color:$status_white;
+    font-size: 27px;
+    padding-top: 4px;
+    text-align: center;
+  }
+  .btn-remove-reward:active{
+    background-color: white;
+    color:#F45D40;
+  }
+
+  .white {
+    color: $status_white;
+  }
+
+  .black {
+    color: $status_black;
+  }
+}

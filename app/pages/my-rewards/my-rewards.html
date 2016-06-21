@@ -1,0 +1,12 @@
+<ion-content class="my-rewards">
+  <ion-card *ngFor="let reward of rewardsFavorites">
+    <div class="stars-rating">Осталось {{reward.time_to_end}}</div>
+    <img src="build/{{reward.img}}"/>
+    <div class="progress-percent {{reward.category.color}}">{{reward.category.text}}</div>
+    <div class="btn-remove-reward"><ion-icon name="ios-remove-outline"></ion-icon></div>
+    <ion-card-content>
+      {{reward.name}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

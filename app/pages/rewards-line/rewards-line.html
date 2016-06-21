@@ -1,0 +1,21 @@
+<div  [ngStyle]="{
+'width':progressWidth +'%',
+'height': '20px',
+'position': 'fixed',
+'z-index': '2',
+'background': 'linear-gradient(to bottom, #C3E7B2, #70C84E)'
+}"></div>
+<!--'-webkit-transition': 'width 0.3s ease-in-out',-->
+<ion-content class="rewards-line">
+
+  <ion-card *ngFor="let reward of rewards">
+    <div class="stars-rating">Осталось {{reward.time_to_end}}</div>
+    <img src="build/{{reward.img}}"/>
+    <div class="progress-percent {{reward.category.color}}">{{reward.category.text}}</div>
+    <div class="btn-add-reward"><ion-icon name="ios-add-outline"></ion-icon></div>
+    <ion-card-content>
+      {{reward.name}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-content class="profile">
+    <ion-card class="card profile-card" *ngFor="let profileRw of profileRewards">
+        <div class="profile-card-logo"><img class="org-logo" src="build/{{profileRw.orgLogo}}"/></div>
+        <div class="profile-card-name">{{profileRw.orgName}}</div>
+        <img class="blur-img" src="build/{{profileRw.orgBg}}"/>
+
+        <div class="profile-card-chart-wrap">
+            <div class="profile-card-multiplicator">Мультипликатор баллов</div>
+            <div class="profile-card-chart">
+                <div class="profile-card-btn-arrow">
+                    <div><ion-icon name="ios-arrow-up-outline"></ion-icon></div>
+                    <div><ion-icon name="ios-arrow-up-outline"></ion-icon></div>
+                </div>
+                <div class="profile-card-chart-percent">{{profileRw.cardChartPercent}}%</div>
+            </div>
+        </div>
+        <ion-card-content>
+            <ion-item *ngFor="let dpItem of profileRw.dopItems">
+                <ion-avatar item-left>
+                    <img src="build/{{dpItem.avatar}}"/>
+                </ion-avatar>
+                <div class="card-description-wrap">
+                    <div class="card-description-text">{{dpItem.description}}</div>
+                    <div class="card-description-percent"> + {{dpItem.descriptionPercent}} %</div>
+                </div>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

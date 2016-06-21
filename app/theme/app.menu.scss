@@ -1,0 +1,18 @@
+.app-menu {
+
+  background-color: $status_green;
+
+  ion-list > .item:first-child {
+    border-top: 0;
+  }
+  ion-list .item-inner, ion-list > .item:last-child {
+    border-bottom: 0;
+  }
+  button.item:not([detail-none]) .item-inner {
+    background-image: none;
+  }
+  .btn-menu {
+    background-color: $status_green;
+    color:$status_white;
+  }
+}

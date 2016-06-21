@@ -1,0 +1,87 @@
+.rewards-line {
+
+  .card.rewards:first-child{
+    margin-top: 11px;
+  }
+  .stars-rating {
+    width: 35%;
+    height: 30px;
+    font-size: 13px;
+    position: absolute;
+    z-index: 3;
+    text-align: right;
+    padding-top: 6px;
+    padding-right: 7px;
+    color: $status_white;
+    right: 12px;
+    background-color: rgba(0,0,0,0.3);
+  }
+  .progress-percent {
+    width: 90%;
+    height: 24px;
+    background: transparent;
+    margin-top: -34px;
+    z-index: 2;
+    color: $status_white;
+    position: absolute;
+    margin-left: 17px;
+    font-size: 24px;
+    text-align: left;
+  }
+  .btn-add-reward{
+    width:40px;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    z-index: 4;
+    margin-top: -20px;
+    background-color: $status_green;
+    color:$status_white;
+    font-size: 27px;
+    padding-top: 4px;
+    text-align: center;
+  }
+  .btn-add-reward:active{
+    background-color: $status_white;
+    color:$status_green;
+  }
+
+  /***** rewards ******/
+  //.progress-bar {
+  //  padding: 0;
+  //  border: 0;
+  //  background-color: #f4f4f4;
+  //}
+  //
+  //.progress-reward {
+  //  padding: 0;
+  //  margin: 0;
+  //  border: 0;
+  //}
+  //
+  //.progress-line {
+  //  /*width: 60%;*/
+  //  height: 35px;
+  //  background-color: indigo;
+  //}
+  //
+
+
+  .white {
+    color: $status_white;
+  }
+
+  .black {
+    color: $status_black;
+  }
+
+  .progress-subheader {
+    transition: width 0.3s ease-in-out;
+    -webkit-transition: width 0.3s ease-in-out;
+    background: linear-gradient(to bottom, #C3E7B2, #70C84E);
+    -webkit-transform: translate3d(0,0,0);
+    position: fixed;
+    height: 20px;
+    z-index: 2;
+  }
+}

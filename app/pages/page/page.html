@@ -1,0 +1,80 @@
+<div [hidden]="!showProgress" [ngStyle]="{
+'width':progressWidth +'%',
+'height': '20px',
+'position': 'fixed',
+'z-index': '2',
+'background': 'linear-gradient(to bottom, #C3E7B2, #70C84E)'
+}"></div>
+<ion-content class="page">
+    <div class="over-menu"></div>
+    <ion-slides #mySlider (didChange)="onSlideChanged()" [options]="mySlideOptions">
+        <ion-slide class="profile">
+            <br/>
+
+            <div class="chart-progress" id="graph" data-percent="88" data-size="220" data-line="15"></div>
+            <ion-card class="card profile-card" *ngFor="let profileRw of profileRewards">
+                <div class="profile-card-logo"><img class="org-logo" src="build/{{profileRw.orgLogo}}"/></div>
+                <div class="profile-card-name">{{profileRw.orgName}}</div>
+                <img class="blur-img" src="build/{{profileRw.orgBg}}"/>
+
+                <div class="profile-card-chart-wrap">
+                    <div class="profile-card-multiplicator">Мультипликатор баллов</div>
+                    <div class="profile-card-chart">
+                        <div class="profile-card-btn-arrow">
+                            <div>
+                                <ion-icon name="ios-arrow-up-outline"></ion-icon>
+                            </div>
+                            <div>
+                                <ion-icon name="ios-arrow-up-outline"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="chart-progress" id="graph4" [attr.data-percent]="profileRw.cardChartPercent"
+                             data-size="50" data-line="5" data-class="label-circle-small"></div>
+                    </div>
+                </div>
+                <ion-card-content>
+                    <ion-item *ngFor="let dpItem of profileRw.dopItems">
+                        <div class="avatar"><img src="build/{{dpItem.avatar}}"/></div>
+                        <div class="card-description-wrap">
+                            <div class="card-description-text">{{dpItem.description}}</div>
+                            <div class="card-description-percent"> + {{dpItem.descriptionPercent}} %</div>
+                        </div>
+                    </ion-item>
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide class="rewards-line">
+            <div style="height: calc(100% - 20px);width: 100%">
+                <ion-card *ngFor="let reward of rewards">
+                    <div class="stars-rating">Осталось {{reward.time_to_end}}</div>
+                    <img src="build/{{reward.img}}"/>
+
+                    <div class="progress-percent {{reward.category.color}}">{{reward.category.text}}</div>
+                    <div class="btn-add-reward">
+                        <ion-icon name="ios-add-outline"></ion-icon>
+                    </div>
+                    <ion-card-content class="rewards-line-card-content">
+                        {{reward.name}}
+                    </ion-card-content>
+                </ion-card>
+            </div>
+        </ion-slide>
+        <ion-slide class="my-rewards">
+            <ion-card *ngFor="let reward of rewardsFavorites">
+                <div class="stars-rating">Осталось {{reward.time_to_end}}</div>
+                <img src="build/{{reward.img}}"/>
+
+                <div class="progress-percent {{reward.category.color}}">{{reward.category.text}}</div>
+                <div class="btn-remove-reward">
+                    <ion-icon name="ios-remove-outline"></ion-icon>
+                </div>
+                <ion-card-content class="rewards-line-card-content">
+                    {{reward.name}}
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <!--<ion-slide>-->
+            <!--<button ion-item *ngFor="let i of items">{{i.title}}</button>-->
+        <!--</ion-slide>-->
+    </ion-slides>
+</ion-content>

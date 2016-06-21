@@ -1,0 +1,14 @@
+<ion-menu [content]="content">
+  <ion-content class="app-menu">
+    <div style="width:100%;height: 200px;"></div>
+    <ion-list>
+      <button class="btn-menu" menuClose light ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

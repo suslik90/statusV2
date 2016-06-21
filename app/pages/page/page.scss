@@ -1,0 +1,68 @@
+ion-content{
+  background-color: $status_lightgrey;
+}
+.swiper-slide .avatar img {
+  border-radius: 17px;
+}
+
+.page {
+  .over-menu{
+    width:30px;
+    height: 100%;
+    //border:1px solid red;
+    position:fixed;
+    left:0;
+    z-index: 2;
+  }
+  .swiper-container {
+    overflow: inherit;
+    height: auto;
+
+    .avatar {
+      width: 35px;
+      height: 35px;
+      float: left;
+    }
+    .profile {
+      .card-description-text {
+        width: 61%;
+      }
+    }
+  }
+
+  .label-circle {
+    color: $label-circle-color;
+    display: block;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 47px;
+    font-weight: 100;
+    margin-top: 22%;
+    margin-left: 39%;
+    position: absolute;
+  }
+  .label-circle-small {
+    color: $status_white;
+    display: block;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+    margin-top: 5.5%;
+    margin-left: 6%;
+    position: absolute;
+  }
+  @import "../profile/profile";
+  @import "../rewards-line/rewards-line";
+  .rewards-line {
+    .rewards-line-card-content{
+      text-align: left;
+    }
+  }
+  @import "../my-rewards/my-rewards";
+  .my-rewards {
+    .rewards-line-card-content{
+      text-align: left;
+    }
+  }
+}
