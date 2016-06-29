@@ -7,6 +7,7 @@ import {PagePage} from './pages/page/page';
 import {RewardsLinePage} from './pages/rewards-line/rewards-line';
 import {ProfilePage} from './pages/profile/profile';
 import {MyRewardsPage} from './pages/my-rewards/my-rewards';
+import {SocialPage} from './pages/social/social';
 
 enableProdMode();
 
@@ -31,12 +32,13 @@ class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Реварды', icon:'ios-pricetags-outline', component: PagePage },
+      { title: 'Контакты', icon:'ios-contacts-outline', component: SocialPage },
       { title: 'Настройки', icon:'ios-settings-outline', component: PagePage },
       { title: 'Выход', icon:'ios-undo-outline', component: PagePage },
     ];
 
     //this.rootPage = ProfilePage;
-    this.rootPage = PagePage;
+    this.rootPage = SocialPage;
   }
 
   initializeApp() {

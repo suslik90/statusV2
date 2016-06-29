@@ -1,0 +1,113 @@
+<!--
+  Generated template for the SocialPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-navbar *navbar [hidden]="showNavbar">
+    <ion-title>Друзья</ion-title>
+</ion-navbar>
+
+<ion-content class="social">
+    <div class="over-menu"></div>
+    <ion-slides #mySlider (didChange)="onSlideChanged()" [options]="mySlideOptions">
+        <ion-slide class="user">
+            <div class="user-wrap">
+                <div class="user-head-block">
+                    <div class="user-avatar-wrap">
+                        <img class="user-avatar-img" src="build/img/ava2.jpg"/>
+                    </div>
+                    <div class="user-name-wrap">
+                        <div class="text">Иван Долгополов</div>
+                    </div>
+                </div>
+            </div>
+            <div class="users-top-contacts-wrap">
+                <div class="small-contacts-wrap" *ngFor="let contact of topContacts;">
+                    <div class="contacts-avatar-wrap">
+                        <img *ngIf="contact.avatar != ''" class="contacts-avatar-img" src="{{contact.avatar}}"/>
+
+                        <div *ngIf="contact.avatar == ''" class="color-avatar">{{contact.short}}</div>
+                    </div>
+                    <div class="contacts-name">{{contact.name}}</div>
+                </div>
+            </div>
+            <div class="users-rewards-wall-wrap">
+                <ion-card *ngFor="let card of userWallCards;">
+                    <ion-item>
+                        <ion-avatar item-left>
+                            <img *ngIf="card.userFrom.avatar != ''" src="{{card.userFrom.avatar}}"/>
+
+                            <div *ngIf="card.userFrom.avatar == ''" class="wall-card color-avatar">
+                                {{card.userFrom.short}}
+                            </div>
+                        </ion-avatar>
+                        <div class="wall-card-user-name">
+                            <div class="user-name">{{card.userFrom.name}}</div>
+                            <div class="wall-card-arrow-forward">
+                                <!--<ion-icon name="ios-arrow-round-forward-outline"></ion-icon>-->
+                                <div class="arrow"></div>
+                            </div>
+                        </div>
+                        <ion-avatar item-right>
+                            <!--<img src="build/img/ava3.jpg">-->
+                            <img *ngIf="card.userTo.avatar != ''" src="{{card.userTo.avatar}}"/>
+
+                            <div *ngIf="card.userTo.avatar == ''" class="wall-card color-avatar">{{card.userTo.short}}
+                            </div>
+                        </ion-avatar>
+                    </ion-item>
+                    <img src="build/img/nike.jpg">
+                    <ion-row>
+                        <ion-col>
+                            <button clear small class="wall-card-btn">
+                                <ion-icon name="ios-heart-outline"></ion-icon>
+                                <div>Мне нравится {{card.countLike}}</div>
+                            </button>
+                        </ion-col>
+                        <ion-col>
+                            <button clear small class="wall-card-btn">
+                                <ion-icon name="ios-megaphone-outline"></ion-icon>
+                                <div>Поделиться</div>
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </ion-card>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <h1>Slide 2</h1>
+        </ion-slide>
+        <ion-slide class="contact-list">
+            <div class="contact-list-wrap">
+                <ion-list>
+                    <ion-item-sliding *ngFor="let contact of constacts;">
+                        <ion-item>
+                            <ion-avatar item-left>
+                                <img *ngIf="contact.avatar != ''" class="contacts-avatar-img" src="{{contact.avatar}}"/>
+
+                                <div *ngIf="contact.avatar == ''" class="color-avatar">{{contact.shortName}}</div>
+                                <!--<img src="{{contact.avatar}}">-->
+                            </ion-avatar>
+                            <h2>{{contact.displayName}}</h2>
+
+                            <h3>ЯрГУ им. П.Г. Демидова</h3>
+
+                            <p>Живет в Ярославле</p>
+                        </ion-item>
+                        <ion-item-options>
+                            <button primary>
+                                <ion-icon name="text"></ion-icon>
+                                Сообщение
+                            </button>
+                            <button secondary>
+                                <ion-icon name="call"></ion-icon>
+                                Звонить
+                            </button>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-list>
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
