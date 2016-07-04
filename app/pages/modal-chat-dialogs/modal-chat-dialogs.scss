@@ -1,0 +1,79 @@
+.header-info-user {
+  display: inline-block;
+}
+
+.modal-close {
+  color: $status_green;
+}
+
+.close-icon {
+  max-width: 30px;
+}
+
+ion-title {
+  padding-left: 40px;
+}
+
+.toolbar-title {
+  text-align: left
+}
+
+.modal-chat-dialogs {
+
+}
+
+.modal-chat-dialogs {
+  padding-top: 16px;
+  padding-bottom: 20px;
+  .user-message-wrap {
+    width: 100%;
+    margin-bottom: 20px;
+
+    .message-container {
+      max-width: 83%;
+      display: table;
+      background-color: $status_white;
+      border: 2px solid $status_white;
+      padding: 5px 5px 5px 10px;
+      margin-right: 5px;
+      margin-left: auto;
+      border-radius: 2px;
+    }
+  }
+  .interlocutor-message-wrap {
+    width: 100%;
+    margin-bottom: 20px;
+    .message-container {
+      max-width: 83%;
+      display: inline-block;
+      background-color: $status_white;
+      border: 2px solid $status_white;
+      padding: 5px 5px 5px 10px;
+      position: relative;
+      margin-right: auto;
+      margin-left: 5px;
+      border-radius: 2px;
+    }
+  }
+}
+
+.input-message, .send-message {
+  display: inline-block;
+}
+
+.input-message textarea {
+  resize: none;
+  width: 100%;
+  border: 1px solid $status_lightgrey;
+  border-radius: 5px
+}
+
+.input-message {
+  width: 86%;
+}
+
+.send-message {
+  font-size: 4rem;
+  width: 10%;
+  margin-left: 10px;
+}

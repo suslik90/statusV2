@@ -1,8 +1,9 @@
 import {ViewChild} from '@angular/core';
-import {Page, NavController, Slides} from 'ionic-angular';
+import {Page, NavController, Slides, Modal, ViewController} from 'ionic-angular';
 import {Component} from '@angular/core';
 import {Contacts} from 'ionic-native';
 import {TransliterPage} from '../../service/transliter';
+import {ModalChatDialogsPage} from '../../pages/modal-chat-dialogs/modal-chat-dialogs';
 /*
  Generated class for the SocialPage page.
 
@@ -18,38 +19,40 @@ import {TransliterPage} from '../../service/transliter';
 })
 export class SocialPage {
     static get parameters() {
-        return [[NavController],[TransliterPage]];
+        return [[NavController],[ViewController],[TransliterPage]];
     }
 
     onPageWillEnter() {
         this.showNavbar = true;
         this.constacts = [];
-        Contacts.find(['*']).then((contacts) => {
-            for (let key in contacts) {
-                let cont = contacts[key];
-                if (cont.phoneNumbers == null)
-                    continue;
-                else {
-                    cont.avatar='';
-                    let trans = this.translit.getNameForAvatar(cont.displayName);
-                    cont.shortName = trans;
-                    if (cont.photos !== null) {
-                        let photo = cont.photos[0];
-                        cont.avatar = photo.value;
-                    }
-                    this.constacts.push(cont);
-                }
+        //Contacts.find(['*']).then((contacts) => {
+        //    for (let key in contacts) {
+        //        let cont = contacts[key];
+        //        if (cont.phoneNumbers == null)
+        //            continue;
+        //        else {
+        //            cont.avatar='';
+        //            let trans = this.translit.getNameForAvatar(cont.displayName);
+        //            cont.shortName = trans;
+        //            if (cont.photos !== null) {
+        //                let photo = cont.photos[0];
+        //                cont.avatar = photo.value;
+        //            }
+        //            this.constacts.push(cont);
+        //        }
+        //
+        //    }
+        //});
 
-            }
-        })
     }
 
-    constructor(nav, translit) {
+    constructor(nav, view,translit) {
         this.nav = nav;
         this.translit = translit;
+        this.view = view;
         this.constacts = [];
         this.mySlideOptions = {
-            initialSlide: 2
+            initialSlide: 1
         };
         //this.showNavbar = false;
 
@@ -71,6 +74,54 @@ export class SocialPage {
                 countLike: 1
             },
         ];
+
+        this.dialogs = [
+            {
+                id:1,
+                interlocutor:{
+                    id:666,
+                    displayName:'Иван Деревянко',
+                    avatar: '',
+                    shortName:'ID'
+                },
+                lastMessage:{
+                    id: 9999,
+                    text: 'Как мы будем завтра есть шаурму?',
+                    date: '30.06.2016 13:56'
+                },
+                unreadMessage : 5
+            },
+            {
+                id:2,
+                interlocutor:{
+                    id:667,
+                    displayName:'Аванасий Метро',
+                    avatar: '',
+                    shortName:'AM'
+                },
+                lastMessage:{
+                    id: 10000,
+                    text: 'Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?Вечером заеду, соньку заберу, ок?',
+                    date: '30.06.2016 10:01'
+                },
+                unreadMessage : 1
+            },
+            {
+                id:3,
+                interlocutor:{
+                    id:667,
+                    displayName:'Кай Метов',
+                    avatar: '',
+                    shortName:'KM'
+                },
+                lastMessage:{
+                    id: 10001,
+                    text: 'Position number 1. Отдыхаю Сам.',
+                    date: '01.01.2016 10:01'
+                },
+                unreadMessage : 0
+            }
+        ];
     }
 
     onSlideChanged() {
@@ -81,5 +132,9 @@ export class SocialPage {
         else
             this.showNavbar = false;
 
+    }
+    openDialog(params){
+        let modal = Modal.create(ModalChatDialogsPage, params);
+        this.nav.present(modal);
     }
 }

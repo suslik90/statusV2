@@ -1,0 +1,39 @@
+<ion-toolbar>
+    <ion-title>
+        <ion-avatar item-left class="header-info-user">
+            <img *ngIf="interlocutor.avatar != ''" class="contacts-avatar-img"
+                 src="{{interlocutor.avatar}}"/>
+
+            <div *ngIf="interlocutor.avatar == ''" class="color-avatar">
+                {{interlocutor.shortName}}
+            </div>
+            <!--<img src="{{contact.avatar}}">-->
+        </ion-avatar>
+        <div class="header-info-user">{{interlocutor.displayName}}</div>
+    </ion-title>
+    <ion-buttons start class="close-icon">
+        <button (click)="dismiss()" class="modal-close">
+            <ion-icon name="md-close"></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-toolbar>
+<ion-content>
+    <div class="modal-chat-dialogs">
+        {{lastMessage}}
+        <div *ngFor="let message of Message"
+             [ngClass]="message.from == 1 ? 'interlocutor-message-wrap': 'user-message-wrap'">
+            <div class="message-container">{{message.text}}</div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-toolbar no-border-top>
+        <div class="input-message">
+      <textarea [(ngModel)]="message">
+      </textarea>
+        </div>
+        <div class="send-message" (click)="addMessage(message)">
+            <ion-icon name="ios-send-outline"></ion-icon>
+        </div>
+    </ion-toolbar>
+</ion-footer>

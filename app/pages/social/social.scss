@@ -1,10 +1,10 @@
 .social {
-  .over-menu{
-    width:30px;
+  .over-menu {
+    width: 30px;
     height: 100%;
     //border:1px solid red;
-    position:fixed;
-    left:0;
+    position: fixed;
+    left: 0;
     z-index: 2;
   }
   .swiper-container {
@@ -86,8 +86,8 @@
     .users-rewards-wall-wrap {
       width: 100%;
 
-      .wall-card-btn{
-        color:$status_green;
+      .wall-card-btn {
+        color: $status_green;
       }
 
       .wall-card {
@@ -102,8 +102,8 @@
       }
       .wall-card-user-name {
         font-size: 1.6rem;
-        .user-name{
-          width:70%;
+        .user-name {
+          width: 70%;
           float: left;
           display: inline-block;
         }
@@ -111,7 +111,7 @@
       .wall-card-arrow-forward {
         font-size: 2rem;
         text-align: center;
-        width:29%;
+        width: 29%;
         display: inline-block;
         margin-left: 8px;
         height: 8px;
@@ -145,10 +145,10 @@
     }
   }
 
-  .contact-list{
+  .contact-list {
 
-    .contact-list-wrap{
-      width:100%;
+    .contact-list-wrap {
+      width: 100%;
       height: 100%;
 
       .color-avatar {
@@ -164,10 +164,49 @@
       }
     }
   }
+
+  .user-groups {
+    .user-groups-wrap {
+      width: 100%;
+      height: 100%;
+
+      .unread-message {
+        width: 20px;
+        height: 20px;
+        border: 2px solid $status_white;
+        background: $status_green_badges;
+        color: $status_black;
+        text-align: center;
+        position: absolute;
+        margin-left: 2.6rem;
+        margin-top: 2.7rem;
+        border-radius: 10px;
+        font-size: 1.4rem;
+      }
+
+      .last-message {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+    }
+  }
 }
 
 ion-avatar img {
   max-width: 3.6rem !important;
   max-height: 3.6rem !important;
   border-radius: 1.8rem;
+}
+
+.color-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: darkcyan;
+  text-align: center;
+  font-size: 2.4rem;
+  padding-top: 8px;
+  color: $status_white;
+  margin: 0 auto;
 }
