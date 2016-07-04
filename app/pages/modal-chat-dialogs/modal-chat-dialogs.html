@@ -29,8 +29,8 @@
 <ion-footer>
     <ion-toolbar no-border-top>
         <div class="input-message">
-      <textarea [(ngModel)]="message">
-      </textarea>
+      <ion-textarea [(ngModel)]="message" (focus)="onFocusTextArea($event)">
+      </ion-textarea>
         </div>
         <div class="send-message" (click)="addMessage(message)">
             <ion-icon name="ios-send-outline"></ion-icon>

@@ -1,5 +1,6 @@
 import {Page, Content, NavController, ViewController, NavParams} from 'ionic-angular';
 import {ViewChild} from '@angular/core';
+import {Keyboard} from 'ionic-native';
 
 /*
   Generated class for the ModalChatDialogsPage page.
@@ -32,10 +33,16 @@ export class ModalChatDialogsPage {
   }
   addMessage(message){
     let m = {from:0, text:message};
-    this.Message.push(m);
     this.message = '';
+    this.Message.push(m);
     setTimeout(()=>{
       this.content.scrollToBottom(100);
+      this.message = '';
     },100);
+  }
+  onFocusTextArea(e){
+      setTimeout(()=>{
+        this.content.scrollToBottom(100);
+      },700);
   }
 }

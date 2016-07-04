@@ -1,6 +1,6 @@
 import {ViewChild, enableProdMode} from '@angular/core';
 import {App, Platform} from 'ionic-angular';
-import {StatusBar} from 'ionic-native';
+import {StatusBar, Keyboard} from 'ionic-native';
 import {GettingStartedPage} from './pages/getting-started/getting-started';
 import {ListPage} from './pages/list/list';
 import {PagePage} from './pages/page/page';
@@ -48,6 +48,9 @@ class MyApp {
       //StatusBar.styleDefault();
       StatusBar.backgroundColorByHexString('#BCBCBC');
       StatusBar.overlaysWebView(true);
+
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+      cordova.plugins.Keyboard.disableScroll(true);
     });
   }
 
