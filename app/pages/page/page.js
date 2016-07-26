@@ -224,7 +224,6 @@ export class PagePage {
             {class:'rewards-line',type:1, page:this.rewards},
             {class:'my-rewards',type:2, page:this.rewardsFavorites},
         ];
-        console.log(this.slideBoxes);
     }
 
 

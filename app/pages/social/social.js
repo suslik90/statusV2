@@ -25,24 +25,24 @@ export class SocialPage {
     onPageWillEnter() {
         this.showNavbar = true;
         this.constacts = [];
-        //Contacts.find(['*']).then((contacts) => {
-        //    for (let key in contacts) {
-        //        let cont = contacts[key];
-        //        if (cont.phoneNumbers == null)
-        //            continue;
-        //        else {
-        //            cont.avatar='';
-        //            let trans = this.translit.getNameForAvatar(cont.displayName);
-        //            cont.shortName = trans;
-        //            if (cont.photos !== null) {
-        //                let photo = cont.photos[0];
-        //                cont.avatar = photo.value;
-        //            }
-        //            this.constacts.push(cont);
-        //        }
-        //
-        //    }
-        //});
+        Contacts.find(['*']).then((contacts) => {
+            for (let key in contacts) {
+                let cont = contacts[key];
+                if (cont.phoneNumbers == null)
+                    continue;
+                else {
+                    cont.avatar='';
+                    let trans = this.translit.getNameForAvatar(cont.displayName);
+                    cont.shortName = trans;
+                    if (cont.photos !== null) {
+                        let photo = cont.photos[0];
+                        cont.avatar = photo.value;
+                    }
+                    this.constacts.push(cont);
+                }
+
+            }
+        });
 
     }
 

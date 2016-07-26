@@ -8,6 +8,7 @@ import {RewardsLinePage} from './pages/rewards-line/rewards-line';
 import {ProfilePage} from './pages/profile/profile';
 import {MyRewardsPage} from './pages/my-rewards/my-rewards';
 import {SocialPage} from './pages/social/social';
+import {SettingsPage} from './pages/settings/settings';
 
 enableProdMode();
 
@@ -37,8 +38,8 @@ class MyApp {
       { title: 'Выход', icon:'ios-undo-outline', component: PagePage },
     ];
 
-    //this.rootPage = ProfilePage;
-    this.rootPage = SocialPage;
+    this.rootPage = PagePage;
+    //this.rootPage = SocialPage;
   }
 
   initializeApp() {
@@ -58,5 +59,8 @@ class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+  openSettings(){
+    this.nav.setRoot(SettingsPage);
   }
 }
