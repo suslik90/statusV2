@@ -1,3 +1,90 @@
 .settings {
 
+  .settings-card {
+    width: 100%;
+    background-color: $status_white;
+    padding: 5px 10px 5px;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+
+    .settings-card-header{
+      font-weight: 600;
+      color:$status_green;
+    }
+
+    .settings-card-content {
+
+      .settings-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+        border: 1px solid red;
+      }
+
+      .settings-fio {
+        width: 76%;
+        padding-left: 25px;
+
+        input[type="text"] {
+          border-bottom: 1px solid $status_lightgrey;
+        }
+        input[type="text"]:focus {
+          border-bottom: 1px solid $status_green;
+        }
+      }
+      .to-str {
+        display: table-cell;
+      }
+      .settings-gender {
+
+        margin-top: 10px;
+
+        .subheader{
+          color:$status_grey;
+        }
+
+        .radio-btn-block {
+
+          ion-list > .item:first-child {
+            border-top: 0;
+          }
+          ion-list > .item:last-child {
+            border-bottom: 0;
+          }
+        }
+      }
+      .date-of-birthday {
+        padding: 5px;
+        height: 28px;
+      }
+      .country{
+        padding: 5px;
+      }
+      .city{
+        padding: 5px;
+        border-top:1px solid $status_lightgrey;
+      }
+    }
+    .interests-item{
+      width:85%;
+      height: 25px;
+      display: inline-table;
+    }
+    .interests-item-delete{
+      width:8%;
+      height: 25px;
+      display: inline-table;
+
+      button{
+        height: 0.8rem;
+        margin:0;
+        padding: 0;
+        color: $status_green;
+      }
+    }
+    .add-interests{
+      color:$status_green;
+    }
+
+  }
+
 }

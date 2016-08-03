@@ -29,3 +29,14 @@
 // App iOS Only Sass
 // --------------------------------------------------
 // CSS that should only apply to the iOS app
+.radio-checked{
+  border-color: $status_green;
+
+  .radio-inner{
+    border-color: $status_green;
+  }
+}
+
+.item-radio-checked ion-label{
+  color: $status_green;
+}

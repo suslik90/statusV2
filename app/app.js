@@ -38,7 +38,7 @@ class MyApp {
       { title: 'Выход', icon:'ios-undo-outline', component: PagePage },
     ];
 
-    this.rootPage = PagePage;
+    this.rootPage = SettingsPage;
     //this.rootPage = SocialPage;
   }
 

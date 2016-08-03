@@ -6,6 +6,11 @@
 // These are the imports which make up the design of this app.
 // By default each design mode includes these shared imports.
 // App Shared Sass variables belong in app.variables.scss.
+.bar-button-default{
+  color:$status_green;
+  font-size: 2.8rem;
+}
+
 
 @import "app.menu";
 

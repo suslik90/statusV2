@@ -29,3 +29,12 @@
 // App Material Design Only Sass
 // --------------------------------------------------
 // CSS that should only apply to the Material Design app
+.radio-checked{
+  border-color: $status_green;
+}
+.radio-inner{
+  background-color: $status_green;
+}
+.item-radio-checked ion-label{
+  color: $status_green;
+}

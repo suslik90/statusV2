@@ -5,15 +5,79 @@
   Ionic pages and navigation.
 -->
 <ion-navbar *navbar>
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>Настройки</ion-title>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Настройки</ion-title>
+    <ion-buttons end>
+        <button royal>
+            <ion-icon name="ios-checkmark-outline"></ion-icon>
+        </button>
+    </ion-buttons>
 </ion-navbar>
 <!--<ion-navbar *navbar>-->
-  <!--<ion-title>Настройки</ion-title>-->
+<!--<ion-title>Настройки</ion-title>-->
 <!--</ion-navbar>-->
 
-<ion-content padding class="settings">
-  
+<ion-content class="settings">
+    <div class="settings-card ">
+        <div class="settings-card-content">
+            <div class="settings-avatar to-str" [ngStyle]="{'background-image':'url(\'build/img/vin_diesel.jpg\')', 'background-repeat':'round', 'background-size':'cover'}">
+
+            </div>
+            <div class="settings-fio to-str">
+                <ion-input type="text" [(ngModel)]="User.firstname" placeholder="Ваше имя"></ion-input>
+                <ion-input type="text" [(ngModel)]="User.lastname" placeholder="Ваша фамилия"></ion-input>
+            </div>
+            <div class="settings-gender">
+                <div class="subheader">Ваш пол</div>
+
+                <div class="radio-btn-block">
+                    <ion-list radio-group [(ngModel)]="User.gender">
+                        <ion-item>
+                            <ion-label>Мужской</ion-label>
+                            <ion-radio value="male" checked="true"></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Женский</ion-label>
+                            <ion-radio value="female"></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="settings-card ">
+        <div class="settings-card-header">День рождения</div>
+        <div class="settings-card-content">
+            <div class="date-of-birthday" (click)="openDataPicker()">{{dateOfBirthday}}</div>
+        </div>
+    </div>
+    <br/>
+
+    <div class="settings-card ">
+        <div class="settings-card-header">Интересы</div>
+        <div class="settings-card-content">
+            <div class="interests-item-wrap" *ngFor="let interes of User.interests; let i=index;">
+                <div class="interests-item" (click)="openDataPicker()">{{interes.name}}</div>
+                <div class="interests-item-delete">
+                    <button clear lights (click)="deleteInteres(index)">
+                        <ion-icon name="ios-close-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
+            <button [hidden]="interestsIsFull" clear small full class="add-interests" (click)="addInterests()">Добавить</button>
+        </div>
+    </div>
+    <br/>
+
+    <div class="settings-card ">
+        <div class="settings-card-header">Город</div>
+        <div class="settings-card-content">
+            <div class="country">{{country}}</div>
+            <div class="city">{{city}}</div>
+        </div>
+    </div>
 </ion-content>
