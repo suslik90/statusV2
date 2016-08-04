@@ -1,4 +1,4 @@
-import {Page, NavController, Slides, Modal, ViewController} from 'ionic-angular';
+import {Page, NavController, Slides, Modal, ViewController, Loading} from 'ionic-angular';
 import { DatePicker } from 'ionic-native';
 
 @Page({
@@ -22,6 +22,7 @@ export class SettingsPage {
     this.dateOfBirthday = 'Не указано';
     this.country = 'Россия';
     this.city = 'Сыктывкар';
+
   }
   openDataPicker(){
     DatePicker.show({
@@ -43,13 +44,13 @@ export class SettingsPage {
             let interes;
             switch (this.User.interests.length){
                 case 0:
-                    interes='Лажа';
+                    interes='Дорогой алкоголь';
                     break;
                 case 1:
-                    interes='Мармелад';
+                    interes='Спортивное питание';
                     break;
                 case 2:
-                    interes='Сыр';
+                    interes='Пицца';
                     break;
             }
 

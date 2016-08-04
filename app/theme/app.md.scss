@@ -38,3 +38,11 @@
 .item-radio-checked ion-label{
   color: $status_green;
 }
+.loading-spinner
+{
+  .spinner-crescent{
+    circle{
+      stroke: $status_green;
+    }
+  }
+}

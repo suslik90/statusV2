@@ -75,69 +75,6 @@
                 </ion-card>
             </div>
         </ion-slide>
-        <ion-slide class="user-groups">
-            <div class="user-groups-wrap">
-                <ion-list>
-                    <ion-item-sliding *ngFor="let dialog of dialogs;" (click)="openDialog({interlocutor:dialog.interlocutor, lastMessage:dialog.lastMessage})">
-                        <ion-item>
-                            <ion-avatar item-left>
-                                <img *ngIf="dialog.interlocutor.avatar != ''" class="contacts-avatar-img"
-                                     src="{{dialog.interlocutor.avatar}}"/>
-                                <div class="unread-message" *ngIf="dialog.unreadMessage > 0">{{dialog.unreadMessage}}</div>
 
-                                <div *ngIf="dialog.interlocutor.avatar == ''" class="color-avatar">
-                                    {{dialog.interlocutor.shortName}}
-                                </div>
-                                <!--<img src="{{contact.avatar}}">-->
-                            </ion-avatar>
-                            <h2>{{dialog.interlocutor.displayName}}</h2>
-
-                            <p class="last-message">{{dialog.lastMessage.text}}</p>
-                        </ion-item>
-                        <ion-item-options>
-                            <button primary>
-                                <ion-icon name="text"></ion-icon>
-                                Сообщение
-                            </button>
-                            <button secondary>
-                                <ion-icon name="call"></ion-icon>
-                                Звонить
-                            </button>
-                        </ion-item-options>
-                    </ion-item-sliding>
-                </ion-list>
-            </div>
-        </ion-slide>
-        <ion-slide class="contact-list">
-            <div class="contact-list-wrap">
-                <ion-list>
-                    <ion-item-sliding *ngFor="let contact of constacts;">
-                        <ion-item>
-                            <ion-avatar item-left>
-                                <img *ngIf="contact.avatar != ''" class="contacts-avatar-img" src="{{contact.avatar}}"/>
-
-                                <div *ngIf="contact.avatar == ''" class="color-avatar">{{contact.shortName}}</div>
-                                <!--<img src="{{contact.avatar}}">-->
-                            </ion-avatar>
-                            <h2>{{contact.displayName}}</h2>
-
-                            <h3>ЯрГУ им. П.Г. Демидова</h3>
-
-                            <p>Живет в Ярославле</p>
-                        </ion-item>
-                        <ion-item-options>
-                            <button primary>
-                                <ion-icon name="text"></ion-icon>
-                                Сообщение
-                            </button>
-                            <button secondary>
-                                <ion-icon name="call"></ion-icon>
-                                Звонить
-                            </button>
-                        </ion-item-options>
-                    </ion-item-sliding>
-                </ion-list>
-            </div>
-        </ion-slide>
     </ion-slides>
 </ion-content>

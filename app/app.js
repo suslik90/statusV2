@@ -1,14 +1,14 @@
 import {ViewChild, enableProdMode} from '@angular/core';
 import {App, Platform} from 'ionic-angular';
 import {StatusBar, Keyboard} from 'ionic-native';
-import {GettingStartedPage} from './pages/getting-started/getting-started';
-import {ListPage} from './pages/list/list';
 import {PagePage} from './pages/page/page';
 import {RewardsLinePage} from './pages/rewards-line/rewards-line';
 import {ProfilePage} from './pages/profile/profile';
 import {MyRewardsPage} from './pages/my-rewards/my-rewards';
 import {SocialPage} from './pages/social/social';
 import {SettingsPage} from './pages/settings/settings';
+import {MessagesPage} from './pages/messages/messages';
+import {ContactsPage} from './pages/contacts/contacts';
 
 enableProdMode();
 
@@ -33,8 +33,10 @@ class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Реварды', icon:'ios-pricetags-outline', component: PagePage },
-      { title: 'Контакты', icon:'ios-contacts-outline', component: SocialPage },
-      { title: 'Настройки', icon:'ios-settings-outline', component: PagePage },
+      { title: 'Контакты', icon:'ios-contacts-outline', component: ContactsPage },
+      { title: 'Сообщения', icon:'ios-mail-outline', component: MessagesPage },
+      //{ title: 'Профиль', icon:'ios-person-outline', component: ProfilePage },
+      { title: 'Настройки', icon:'ios-settings-outline', component: SettingsPage },
       { title: 'Выход', icon:'ios-undo-outline', component: PagePage },
     ];
 
@@ -48,7 +50,6 @@ class MyApp {
       // Here you can do any higher level native things you might need.
       //StatusBar.styleDefault();
       StatusBar.backgroundColorByHexString('#BCBCBC');
-      StatusBar.overlaysWebView(true);
 
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
       cordova.plugins.Keyboard.disableScroll(true);
