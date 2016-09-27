@@ -11,12 +11,20 @@
   font-size: 2.8rem;
 }
 
+.background-image {
+  background-image: url("../../build/img/case.png");
+  background-size: cover;
+  background-position: center;
+  height: 50vw;
+}
+
+.content {
+  background-color: white;
+  position: absolute;
+}
 
 @import "app.menu";
 
-//@import "../pages/getting-started/getting-started";
-
-//@import "../pages/list/list";
 @import "../pages/page/page";
 
 @import "../pages/social/social";
@@ -29,8 +37,8 @@
 
 @import "../pages/contacts/contacts";
 
-//@import "../pages/rewards-line/rewards-line";
+@import "../pages/rewards-line/rewards-line";
 
-//@import "../pages/profile/profile";
+@import "../pages/profile/profile";
 
-//@import "../pages/my-rewards/my-rewards";
+@import "../pages/my-rewards/my-rewards";

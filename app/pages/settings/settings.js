@@ -22,6 +22,7 @@ export class SettingsPage {
     this.dateOfBirthday = 'Не указано';
     this.country = 'Россия';
     this.city = 'Сыктывкар';
+      this.User.gender = 1;
 
   }
   openDataPicker(){
@@ -66,6 +67,9 @@ export class SettingsPage {
     deleteInteres(ind){
         this.User.interests.splice(ind, 1);
         this.interestsIsFull = false;
+    }
+    updateUserGender(gender){
+        this.User.gender = gender;
     }
 
 }

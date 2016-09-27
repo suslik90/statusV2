@@ -40,6 +40,21 @@
         .subheader{
           color:$status_grey;
         }
+        .gender-btn{
+          border:1px solid $status_green;
+          color: $status_green;
+          font-size: 1.9rem;
+        }
+        .active-man{
+          border:none;
+          background-color: $status_lightgrey;
+          color:$status_men_blue;
+        }
+        .active-woman{
+          border:none;
+          background-color: $status_lightgrey;
+          color:$status_women_pink;
+        }
 
         .radio-btn-block {
 
@@ -54,6 +69,12 @@
       .date-of-birthday {
         padding: 5px;
         height: 28px;
+      }
+      ion-col{
+        .date-of-birthday {
+          padding: 12px;
+          height: 28px;
+        }
       }
       .country{
         padding: 5px;

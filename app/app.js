@@ -32,16 +32,18 @@ class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Реварды', icon:'ios-pricetags-outline', component: PagePage },
+      //{ title: 'Реварды', icon:'ios-pricetags-outline', component: PagePage },
       { title: 'Контакты', icon:'ios-contacts-outline', component: ContactsPage },
       { title: 'Сообщения', icon:'ios-mail-outline', component: MessagesPage },
-      //{ title: 'Профиль', icon:'ios-person-outline', component: ProfilePage },
+      { title: 'Профиль', icon:'ios-person-outline', component: ProfilePage },
       { title: 'Настройки', icon:'ios-settings-outline', component: SettingsPage },
+      { title: 'Все реварды', icon:'ios-clipboard-outline', component: RewardsLinePage },
+      { title: 'Мои реварды', icon:'ios-basket-outline', component: MyRewardsPage },
       { title: 'Выход', icon:'ios-undo-outline', component: PagePage },
     ];
 
-    this.rootPage = SettingsPage;
-    //this.rootPage = SocialPage;
+    //this.rootPage = SettingsPage;
+    this.rootPage = ProfilePage;
   }
 
   initializeApp() {
@@ -51,8 +53,8 @@ class MyApp {
       //StatusBar.styleDefault();
       StatusBar.backgroundColorByHexString('#BCBCBC');
 
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
-      cordova.plugins.Keyboard.disableScroll(true);
+      //cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+      //cordova.plugins.Keyboard.disableScroll(true);
     });
   }
 

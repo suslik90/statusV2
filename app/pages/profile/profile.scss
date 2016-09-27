@@ -1,4 +1,19 @@
 .profile {
+  .label-circle {
+    color: $label-circle-color;
+    display: block;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 47px;
+    font-weight: 100;
+    margin-top: 22%;
+    margin-left: 20%;
+    position: absolute;
+  }
+  .chart-progress:first-child{
+    width:60%;
+    margin: 0 auto;
+  }
   .profile-card{
 
     .org-logo{
@@ -13,6 +28,13 @@
     .item-avatar{
       float: left;
     }
+  }
+  .avatar {
+    width: 35px;
+    height: 35px;
+    float: left;
+    border-radius: 15px;
+    overflow: hidden;
   }
   .profile-card-logo{
     width: 90px;
@@ -59,7 +81,19 @@
   .profile-card-chart{
     width: 20%;
     float: left;
-    margin-left: 30px;
+    margin-left: 60px;
+
+    .label-circle-small {
+      color: $status_white;
+      display: block;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 15px;
+      font-weight: 100;
+      margin-top: 5%;
+      margin-left: 3.8%;
+      position: absolute;
+    }
   }
   .profile-card-chart-percent{
     position: absolute;
@@ -90,7 +124,7 @@
     //height: 40px;
   }
   .card-description-text{
-    width:68%;
+    width:61%;
     float:left;
     margin-top: 3px;
     padding-left: 15px;

@@ -20,6 +20,7 @@
 <!--</ion-navbar>-->
 
 <ion-content class="settings">
+
     <div class="settings-card ">
         <div class="settings-card-content">
             <div class="settings-avatar to-str" [ngStyle]="{'background-image':'url(\'build/img/vin_diesel.jpg\')', 'background-repeat':'round', 'background-size':'cover'}">
@@ -30,20 +31,31 @@
                 <ion-input type="text" [(ngModel)]="User.lastname" placeholder="Ваша фамилия"></ion-input>
             </div>
             <div class="settings-gender">
-                <div class="subheader">Ваш пол</div>
+                <div class="subheader">Ваш пол и дата рождения</div>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col width-50>
+                            <button outline light [ngClass]="User.gender == 1 ? 'gender-btn  active-man' : 'gender-btn'" (click)="updateUserGender('1')"><ion-icon name="ios-man-outline"></ion-icon></button>
+                            <button outline light [ngClass]="User.gender == 0 ? 'gender-btn  active-woman' : 'gender-btn'" (click)="updateUserGender('0')"><ion-icon name="ios-woman-outline"></ion-icon></button>
+                        </ion-col>
+                        <ion-col width-50>
+                            <div class="date-of-birthday" (click)="openDataPicker()">{{dateOfBirthday}}</div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
 
-                <div class="radio-btn-block">
-                    <ion-list radio-group [(ngModel)]="User.gender">
-                        <ion-item>
-                            <ion-label>Мужской</ion-label>
-                            <ion-radio value="male" checked="true"></ion-radio>
-                        </ion-item>
-                        <ion-item>
-                            <ion-label>Женский</ion-label>
-                            <ion-radio value="female"></ion-radio>
-                        </ion-item>
-                    </ion-list>
-                </div>
+                <!--<div class="radio-btn-block">-->
+                    <!--<ion-list radio-group [(ngModel)]="User.gender">-->
+                        <!--<ion-item>-->
+                            <!--<ion-label>Мужской</ion-label>-->
+                            <!--<ion-radio value="male" checked="true"></ion-radio>-->
+                        <!--</ion-item>-->
+                        <!--<ion-item>-->
+                            <!--<ion-label>Женский</ion-label>-->
+                            <!--<ion-radio value="female"></ion-radio>-->
+                        <!--</ion-item>-->
+                    <!--</ion-list>-->
+                <!--</div>-->
             </div>
         </div>
     </div>

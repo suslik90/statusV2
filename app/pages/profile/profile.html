@@ -1,4 +1,5 @@
 <ion-content class="profile">
+    <div class="chart-progress" id="graph" data-percent="88" data-size="220" data-line="15"></div>
     <ion-card class="card profile-card" *ngFor="let profileRw of profileRewards">
         <div class="profile-card-logo"><img class="org-logo" src="build/{{profileRw.orgLogo}}"/></div>
         <div class="profile-card-name">{{profileRw.orgName}}</div>
@@ -8,17 +9,20 @@
             <div class="profile-card-multiplicator">Мультипликатор баллов</div>
             <div class="profile-card-chart">
                 <div class="profile-card-btn-arrow">
-                    <div><ion-icon name="ios-arrow-up-outline"></ion-icon></div>
-                    <div><ion-icon name="ios-arrow-up-outline"></ion-icon></div>
+                    <div>
+                        <ion-icon name="ios-arrow-up-outline"></ion-icon>
+                    </div>
+                    <div>
+                        <ion-icon name="ios-arrow-up-outline"></ion-icon>
+                    </div>
                 </div>
-                <div class="profile-card-chart-percent">{{profileRw.cardChartPercent}}%</div>
+                <div class="chart-progress" id="graph4" [attr.data-percent]="profileRw.cardChartPercent"
+                     data-size="50" data-line="5" data-class="label-circle-small"></div>
             </div>
         </div>
         <ion-card-content>
             <ion-item *ngFor="let dpItem of profileRw.dopItems">
-                <ion-avatar item-left>
-                    <img src="build/{{dpItem.avatar}}"/>
-                </ion-avatar>
+                <div class="avatar"><img src="build/{{dpItem.avatar}}"/></div>
                 <div class="card-description-wrap">
                     <div class="card-description-text">{{dpItem.description}}</div>
                     <div class="card-description-percent"> + {{dpItem.descriptionPercent}} %</div>

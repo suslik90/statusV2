@@ -73,7 +73,7 @@ gulp.task("img", function() {
       .pipe(gulp.dest("www/build/img"));
 });
 gulp.task("modules", function() {
-  return gulp.src(["node_modules/chart.js/dist/Chart.bundle.js"])
+  return gulp.src(["node_modules/chart.js/dist/Chart.bundle.js","node_modules/jquery/dist/jquery.js"])
       .pipe(gulp.dest("www/build/js"));
 });
 
