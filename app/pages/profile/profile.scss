@@ -1,4 +1,19 @@
 .profile {
+  $border-radius-progress-bar: 5px;
+  .chart-level {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: -40px;
+    width: 100%;
+    position: relative;
+    .level {
+      width: 60px;
+      margin: 0 auto;
+      background-color: $status_lightgrey;
+    }
+    .text {
+    }
+  }
   .label-circle {
     color: $label-circle-color;
     display: block;
@@ -10,141 +25,63 @@
     margin-left: 20%;
     position: absolute;
   }
-  .chart-progress:first-child{
-    width:60%;
-    margin: 0 auto;
+  .chart-progress:first-child {
+    width: 60%;
+    margin: 15px auto 0;
   }
-  .profile-card{
 
-    .org-logo{
-      width:60px;
-    }
-
-    .blur-img{
-      -webkit-filter: blur(3px);
-      filter: blur(3px);
-    }
-
-    .item-avatar{
-      float: left;
-    }
-  }
-  .avatar {
-    width: 35px;
-    height: 35px;
-    float: left;
-    border-radius: 15px;
-    overflow: hidden;
-  }
-  .profile-card-logo{
-    width: 90px;
-    /* border: 1px solid red; */
-    text-align: center;
-    position: absolute;
-    z-index: 3;
-    margin-top: 14px;
-    margin-left: 14px;
-    background-color: white;
-    -webkit-box-shadow: 0 3px 6px -2px #777;
-    -moz-box-shadow: 0 3px 6px -2px #777;
-    box-shadow: 0 3px 6px -2px #777;
-  }
-  .profile-card-name{
-    width: 220px;
-    height: 33px;
-    text-align: center;
-    position: absolute;
-    z-index: 3;
-    margin-top: 14px;
-    margin-left: 110px;
-    color: white;
-    font-size: 28px;
-    text-shadow: 0px 0px 12px #777;
-  }
-  .profile-card-chart-wrap{
-    margin-top: -55px;
-    position: absolute;
-    z-index: 30;
-    width: inherit;
-    background-color: rgba(0,0,0,0.2);
-    color:white;
-    padding-top: 5px;
-  }
-  .profile-card-multiplicator{
-    width: 46%;
-    float: left;
-    text-align: right;
-    margin-top: 11px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-  }
-  .profile-card-chart{
-    width: 20%;
-    float: left;
-    margin-left: 60px;
-
-    .label-circle-small {
-      color: $status_white;
-      display: block;
+  .org-card {
+    background-color: $status_lightgrey;
+    .org-card-header {
+      padding: 6px;
       text-align: center;
-      font-family: sans-serif;
-      font-size: 15px;
-      font-weight: 100;
-      margin-top: 5%;
-      margin-left: 3.8%;
-      position: absolute;
+      font-size: 3rem;
+    }
+    .org-card-content {
+      .progress-bar-wrap {
+        height: 15px;
+        width: 100%;
+        border-radius: $border-radius-progress-bar;
+
+        .progress-bar {
+          height: 15px;
+          border-radius: $border-radius-progress-bar;
+          width: 30%;
+          background-color: #005efe;
+
+        }
+      }
+      .category-wrap {
+        width: 100%;
+        margin-top:10px;
+
+        .category {
+          height: 50px;
+          display: flex;
+          padding: 5px;
+
+          .text {
+            width: calc(100% - 40px);
+            display: inline-block;
+            font-size: 1.8rem;
+            padding-top: 5px;
+          }
+          .icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            border-radius: 17px;
+            //background-image: url('../img/cat2.jpeg');
+            //background-size: cover;
+
+            img {
+              width: 35px;
+              height: 35px;
+              border-radius: 17px;
+            }
+          }
+        }
+      }
     }
   }
-  .profile-card-chart-percent{
-    position: absolute;
-    z-index: 3;
-    margin-top: 19px;
-    margin-left: 19px;
-  }
-  .profile-card-btn-arrow{
-    width:40px;
-    height: 40px;
-    position: absolute;
-    right: 15px;
-    z-index: 4;
-    margin-top: -25px;
-    background-color: $status_green;
-    color:$status_white;
-    font-size: 27px;
-    text-align: center;
-  }
-  .profile-card-btn-arrow:active{
-    background-color: $status_white;
-    color:$status_green;
-  }
-  .profile-card-btn-arrow div:first-child{
-    margin-bottom: -27px;
-  }
-  .card-description-wrap{
-    //height: 40px;
-  }
-  .card-description-text{
-    width:61%;
-    float:left;
-    margin-top: 3px;
-    padding-left: 15px;
-
-  }
-  .card-description-percent{
-    width:40%;
-    margin-top: 3px;
-    font-size: 25px;
-    color:$status_green;
-  }
-  
-  .item{
-    padding-left: 0;
-  }
-  .item-inner{
-    padding-right: 0;
-  }
-  ion-label{
-    margin-right: 0;
-  }
-
 }
